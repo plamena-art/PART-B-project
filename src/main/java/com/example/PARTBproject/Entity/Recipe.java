@@ -8,7 +8,7 @@ public class Recipe {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Id;
+    private long Id;
     private String description;
     private String ingredients;
     private String methodSteps;
@@ -61,7 +61,7 @@ public class Recipe {
 
     public boolean hasNutritions(Nutritions Nutritions) {
         for (Nutritions containedNutritions: getNutritionInfo()) {
-            if (containedNutritions.getId()) == Nutritions.getId()) {
+            if (containedNutritions.getId()) == Nutritions.getId()); {
     return true;
             }
         } return false;

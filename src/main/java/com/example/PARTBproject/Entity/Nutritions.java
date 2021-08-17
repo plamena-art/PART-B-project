@@ -11,7 +11,7 @@ public class Nutritions {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
-    private Id;
+    private Long Id;
     private String description;
     private String total;
 
@@ -38,5 +38,8 @@ public class Nutritions {
 
     public void setTotal(String total) {
         this.total = total;
+    }
+
+    public boolean getId() {
     }
 }
