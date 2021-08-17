@@ -1,7 +1,8 @@
 package com.example.PARTBproject.Controller;
 
+import com.example.PARTBproject.Entity.Nutritious;
 import com.example.PARTBproject.Entity.Recipe;
-import com.example.PARTBproject.Repositories.NutritionRepository;
+import com.example.PARTBproject.Repositories.NutritiousRepository;
 import com.example.PARTBproject.Repositories.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.ui.Model;
@@ -16,7 +17,7 @@ public class RecipesController {
     RecipeRepository repository;
 
     @Autowired
-    NutritionRepository nutritionRepository;
+    NutritiousRepository nutritionRepository;
     private Object nutritionInfo;
 
     @RequestMapping("/recipe/{id}")
@@ -42,5 +43,19 @@ public class RecipesController {
 
 
         model.addAttribute("recipe", newRecipe);
+        model.addAttribute("recipes", nutritionRepository.findAll());
+        return "redirect:/recipe/" + newRecipe.getId();
+    }
+
+    @RequestMapping(value="/recipe/{id}/nutritionInfo", method=RequestMethod.POST)
+    public String recipesAddNutritiouns(@PathVariable Long id, @RequestParam Long nutritiousId, Model model) {
+        Nutritious nutritious = NutritiousRepository.findOne(nutritiousId);
+        Recipe recipe = (Recipe) repository.findOne(id);
+
+
+
+
+
+
     }
 }

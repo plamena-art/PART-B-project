@@ -20,7 +20,7 @@ public class Recipe {
         super();
     }
 
-    public Recipe(String description, String ingredients, String methodSteps, List<Nutritious> nutritionInfo) {
+    public Recipe(long Id, String description, String ingredients, String methodSteps, List<Nutritious> nutritionInfo) {
         this.description = description;
         this.ingredients = ingredients;
         this.methodSteps = methodSteps;
@@ -67,5 +67,9 @@ public class Recipe {
             return true;
         } return false;
 
+    }
+
+    public long getId() {
+        return Id;
     }
 }

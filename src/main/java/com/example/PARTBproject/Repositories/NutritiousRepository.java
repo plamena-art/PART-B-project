@@ -5,7 +5,10 @@ import org.springframework.data.repository.CrudRepository;
 
 import java.util.List;
 
-public interface NutritionRepository extends CrudRepository<Nutritious,Long> {
+public interface NutritiousRepository extends CrudRepository<Nutritious,Long> {
+
+    static Nutritious findOne(Long nutritiousId) {
+    }
 
     public List<Nutritious> findBytotal(String total);
 }
