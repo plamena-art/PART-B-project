@@ -1,30 +1,40 @@
 package com.example.PARTBproject.Entity;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
 public class Recipe {
 
     @Id
-    @GeneratedValue(strategy= GenerationType.AUTO)
-    private long Id;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
     private String description;
     private String ingredients;
     private String methodSteps;
 
-    @ManyToMany
-    private List<Nutritious> nutritionInfo;
+    @OneToMany
+    private List<Nutrition> nutritionInfo;
 
     public Recipe() {
         super();
+        this.nutritionInfo = new ArrayList<>();
     }
 
-    public Recipe(long Id, String description, String ingredients, String methodSteps, List<Nutritious> nutritionInfo) {
+    public Recipe(String description, String ingredients, String methodSteps, List<Nutrition> nutritionInfo) {
         this.description = description;
         this.ingredients = ingredients;
         this.methodSteps = methodSteps;
         this.nutritionInfo = nutritionInfo;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getDescription() {
@@ -51,25 +61,17 @@ public class Recipe {
         this.methodSteps = methodSteps;
     }
 
-    public List<Nutritious> getNutritionInfo() {
+    public List<Nutrition> getNutritionInfo() {
         return nutritionInfo;
     }
 
-    public void setNutritionInfo(List<Nutritious> nutritionInfo) {
+    public void setNutritionInfo(List<Nutrition> nutritionInfo) {
         this.nutritionInfo = nutritionInfo;
     }
 
-    public boolean hasNutritious(Nutritious nutritious) {
-        for (Nutritious containedNutritious: getNutritionInfo()) {
-            if (containedNutritious.getId() == nutritious.getId()) {
-                continue;
-            }
-            return true;
-        } return false;
+    public boolean hasNutrition(Nutrition nutrition) {
 
+        return getNutritionInfo().contains(nutrition);
     }
 
-    public long getId() {
-        return Id;
-    }
 }

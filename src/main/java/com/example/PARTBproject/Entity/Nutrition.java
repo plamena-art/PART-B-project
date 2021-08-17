@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Nutritious {
+public class Nutrition {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -14,7 +14,7 @@ public class Nutritious {
     private String description;
     private String total;
 
-    public Nutritious() {
+    public Nutrition() {
         super();
     }
 

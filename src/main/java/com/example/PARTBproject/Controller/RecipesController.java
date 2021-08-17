@@ -1,45 +1,47 @@
 package com.example.PARTBproject.Controller;
 
-import com.example.PARTBproject.Entity.Nutritious;
+import com.example.PARTBproject.Entity.Nutrition;
 import com.example.PARTBproject.Entity.Recipe;
 import com.example.PARTBproject.Repositories.NutritiousRepository;
 import com.example.PARTBproject.Repositories.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
+@Controller
 public class RecipesController {
 
     @Autowired
-    RecipeRepository repository;
+    RecipeRepository recipeRepository;
+
 
     @Autowired
     NutritiousRepository nutritionRepository;
     private Object nutritionInfo;
 
-    @RequestMapping("/recipe/{id}")
+    @GetMapping("/recipe/{id}")
     public String recipe(@PathVariable Long id, Model model) {
-        model.addAttribute("recipe", repository.findOne(id));
-        model.addAttribute("nutritionInfo" , nutritionRepository.findAll());
+        Recipe recipe = recipeRepository.findById(id).orElse(new Recipe());
+
+        model.addAttribute("recipe", recipe);
+        model.addAttribute("nutritionInfo", recipe.getNutritionInfo());
         return "recipe";
     }
 
-    @RequestMapping(value="/recipes", method=RequestMethod.GET)
+    @GetMapping("/recipes")
     public String recipesList(Model model) {
-        model.addAttribute("recipes", repository.findAll());
-        return "recipes";
+        model.addAttribute("recipes", recipeRepository.findAll());
+        return "recipeList";
     }
 
-    @RequestMapping(value="recipes", method=RequestMethod.POST)
+    @PostMapping("/recipes")
     public String recipesAdd(@RequestParam String methodSteps, @RequestParam String description, @RequestParam String ingredients, Model model) {
         Recipe newRecipe = new Recipe();
-        newRecipe.setMethodSteps();
-        new.Recipe.setDescription();
-        new.Recipe.setMethodSteps();
-        repository.save(new.Recipe);
+        newRecipe.setMethodSteps(methodSteps);
+        newRecipe.setDescription(description);
+        newRecipe.setIngredients(ingredients);
+        recipeRepository.save(newRecipe);
 
 
         model.addAttribute("recipe", newRecipe);
@@ -47,15 +49,23 @@ public class RecipesController {
         return "redirect:/recipe/" + newRecipe.getId();
     }
 
-    @RequestMapping(value="/recipe/{id}/nutritionInfo", method=RequestMethod.POST)
+    @RequestMapping(value = "/recipe/{id}/nutritionInfo", method = RequestMethod.POST)
     public String recipesAddNutritiouns(@PathVariable Long id, @RequestParam Long nutritiousId, Model model) {
-        Nutritious nutritious = NutritiousRepository.findOne(nutritiousId);
-        Recipe recipe = (Recipe) repository.findOne(id);
+        Nutrition nutrition = nutritionRepository.findById(nutritiousId).orElse(new Nutrition());
+        Recipe recipe = recipeRepository.findById(id).orElse(new Recipe());
 
+        if (recipe != null) {
+            if (!recipe.hasNutrition(nutrition)) {
+                recipe.getNutritionInfo().add(nutrition);
+            }
+            recipeRepository.save(recipe);
+            model.addAttribute("recipe", recipe);
+            Model nutritionInfo = model.addAttribute("nutritionInfo", recipe.getNutritionInfo());
+            return "redirect:/recipe" + recipe.getId();
+        }
 
-
-
-
+        model.addAttribute("recipes", recipeRepository.findAll());
+        return "redirect:/recipes";
 
     }
 }

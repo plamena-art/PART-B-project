@@ -1,0 +1,33 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Recipes</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+<h1>Recipes</h1>
+<table>
+  <tr>
+    <th>Recipe</th>
+    <th>Nutrition Info</th>
+    <th></th>
+  </tr>
+  <tr th:each="recipe : ${recipes}">
+    <td th:text="${recipe.description + ' ' + recipe.ingredients}">
+    </td>
+    <td>
+        <span th:each="nutrition,iterStat : ${recipe.nutritionInfo}">
+            <span th:text="${nutrition.total}"/><th:block
+                th:if="${!iterStat.last}">,</th:block>
+        </span>
+    </td>
+    <td>
+      <a th:href="@{/recipe/{id}(id=${recipe.id})}">view</a>
+    </td>
+  </tr>
+</table>
+<hr/>
+
+</body>
+</html>

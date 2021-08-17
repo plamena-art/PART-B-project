@@ -1,0 +1,16 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Recipe</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body>
+    <h1>Recipe</h1>
+    Description: <b th:text="${recipe.description}" /> <b th:text="${recipe.ingredients}" />
+    Instructions: <span th:text="${recipe.methodSteps}" /><br/>
+    Nutrition Info: <span th:each="nutrition : ${recipe.nutritionInfo}">
+    <br/>&nbsp;&nbsp;<span th:text="${nutrition.total}" /> - <span
+      th:text="${nutrition.name}" />
+
+</body>
+</html>
