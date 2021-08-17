@@ -14,13 +14,13 @@ public class Recipe {
     private String methodSteps;
 
     @ManyToMany
-    private List<Nutritions> nutritionInfo;
+    private List<Nutritious> nutritionInfo;
 
     public Recipe() {
         super();
     }
 
-    public Recipe(String description, String ingredients, String methodSteps, List<Nutritions> nutritionInfo) {
+    public Recipe(String description, String ingredients, String methodSteps, List<Nutritious> nutritionInfo) {
         this.description = description;
         this.ingredients = ingredients;
         this.methodSteps = methodSteps;
@@ -51,19 +51,20 @@ public class Recipe {
         this.methodSteps = methodSteps;
     }
 
-    public List<Nutritions> getNutritionInfo() {
+    public List<Nutritious> getNutritionInfo() {
         return nutritionInfo;
     }
 
-    public void setNutritionInfo(List<Nutritions> nutritionInfo) {
+    public void setNutritionInfo(List<Nutritious> nutritionInfo) {
         this.nutritionInfo = nutritionInfo;
     }
 
-    public boolean hasNutritions(Nutritions Nutritions) {
-        for (Nutritions containedNutritions: getNutritionInfo()) {
-            if (containedNutritions.getId()) == Nutritions.getId()); {
-    return true;
+    public boolean hasNutritious(Nutritious nutritious) {
+        for (Nutritious containedNutritious: getNutritionInfo()) {
+            if (containedNutritious.getId() == nutritious.getId()) {
+                continue;
             }
+            return true;
         } return false;
 
     }

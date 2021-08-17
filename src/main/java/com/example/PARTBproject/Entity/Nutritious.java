@@ -6,8 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Nutritions {
-    //public boolean getId() {
+public class Nutritious {
 
     @Id
     @GeneratedValue(strategy= GenerationType.AUTO)
@@ -15,13 +14,16 @@ public class Nutritions {
     private String description;
     private String total;
 
-    public Nutritions() {
+    public Nutritious() {
         super();
     }
 
-    public Nutritions(String description, String total) {
-        this.description = description;
-        this.total = total;
+    public Long getId() {
+        return Id;
+    }
+
+    public void setId(Long id) {
+        Id = id;
     }
 
     public String getDescription() {
@@ -38,8 +40,5 @@ public class Nutritions {
 
     public void setTotal(String total) {
         this.total = total;
-    }
-
-    public boolean getId() {
     }
 }
