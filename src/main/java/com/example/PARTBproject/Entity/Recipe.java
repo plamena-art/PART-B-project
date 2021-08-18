@@ -4,14 +4,19 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+
 @Entity
+@Table(name = "recipe")
 public class Recipe {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @Column(name = "description")
     private String description;
+    @Column(name = "ingredients")
     private String ingredients;
+    @Column(name = "methodSteps")
     private String methodSteps;
 
     @OneToMany
