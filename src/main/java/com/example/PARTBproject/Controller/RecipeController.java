@@ -2,7 +2,7 @@ package com.example.PARTBproject.Controller;
 
 import com.example.PARTBproject.Entity.Nutrition;
 import com.example.PARTBproject.Entity.Recipe;
-import com.example.PARTBproject.Repositories.NutritiousRepository;
+import com.example.PARTBproject.Repositories.NutritionRepository;
 import com.example.PARTBproject.Repositories.RecipeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,14 +10,13 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 
 @Controller
-public class RecipesController {
+public class RecipeController {
 
     @Autowired
     RecipeRepository recipeRepository;
 
-
     @Autowired
-    NutritiousRepository nutritionRepository;
+    NutritionRepository nutritionRepository;
     private Object nutritionInfo;
 
     @GetMapping("/recipe/{id}")
