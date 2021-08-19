@@ -19,6 +19,12 @@ public class RecipeController {
     NutritionRepository nutritionRepository;
     private Object nutritionInfo;
 
+    @GetMapping("/create-recipe")
+    public String createRecipe(Model model) {
+        model.addAttribute("recipe", new Recipe());
+        return "CreateRecipe";
+    }
+
     @GetMapping("/recipe/{id}")
     public String recipe(@PathVariable Long id, Model model) {
         Recipe recipe = recipeRepository.findById(id).orElse(new Recipe());

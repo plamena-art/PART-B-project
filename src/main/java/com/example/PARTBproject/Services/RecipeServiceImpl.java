@@ -13,10 +13,8 @@ public class RecipeServiceImpl implements RecipeService {
     private RecipeRepository recipeRepository;
 
     @Override
-    public List<Recipe> getRecipe() {
+    public List<Recipe> getAllRecipes() {
         return (List<Recipe>) recipeRepository.findAll();
     }
 
 }
-
-

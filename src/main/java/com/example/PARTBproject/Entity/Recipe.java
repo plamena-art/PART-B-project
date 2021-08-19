@@ -1,5 +1,7 @@
 package com.example.PARTBproject.Entity;
 
+import org.hibernate.annotations.ColumnDefault;
+
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -12,8 +14,11 @@ public class Recipe {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
+    @Column(name = "description", length = 2000)
     private String description;
+    @Column(name = "ingredients", length = 2000)
     private String ingredients;
+    @Column(name = "methodSteps", length = 2000)
     private String methodSteps;
 
     @OneToMany
@@ -77,3 +82,4 @@ public class Recipe {
     }
 
 }
+

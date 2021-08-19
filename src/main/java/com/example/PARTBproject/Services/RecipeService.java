@@ -9,6 +9,6 @@ import java.util.List;
 @Service
 public interface RecipeService {
 
-    List<Recipe> getRecipe();
+    List<Recipe> getAllRecipes();
 
 }
