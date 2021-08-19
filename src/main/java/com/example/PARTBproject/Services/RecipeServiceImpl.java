@@ -1,21 +1,22 @@
 package com.example.PARTBproject.Services;
 
-import com.example.PARTBproject.Commands.RecipeCommandToRecipe;
-import com.example.PARTBproject.Commands.RecipeToRecipeCommand;
 import com.example.PARTBproject.Entity.Recipe;
 import com.example.PARTBproject.Repositories.RecipeRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.Set;
+import java.util.List;
+
 
 public class RecipeServiceImpl implements RecipeService {
 
+    @Autowired
     private RecipeRepository recipeRepository;
-    private RecipeCommandToRecipe recipeCommandToRecipe;
-    private RecipeToRecipeCommand recipeToRecipeCommand;
-
 
     @Override
-    public Set<Recipe> getRecipe() {
-        return null;
+    public List<Recipe> getRecipe() {
+        return (List<Recipe>) recipeRepository.findAll();
     }
+
 }
+
+
