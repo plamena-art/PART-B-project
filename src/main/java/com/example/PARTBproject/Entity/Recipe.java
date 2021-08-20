@@ -1,7 +1,4 @@
 package com.example.PARTBproject.Entity;
-
-import org.hibernate.annotations.ColumnDefault;
-
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,20 +17,23 @@ public class Recipe {
     private String ingredients;
     @Column(name = "methodSteps", length = 2000)
     private String methodSteps;
+    @Column
+    private String total;
 
     @OneToMany
-    private List<Nutrition> nutritionInfo;
+    private List<Nutrition> nutrition;
+
+    public String getTotal() {
+        return total;
+    }
+
+    public void setTotal(String total) {
+        this.total = total;
+    }
 
     public Recipe() {
         super();
-        this.nutritionInfo = new ArrayList<>();
-    }
-
-    public Recipe(String description, String ingredients, String methodSteps, List<Nutrition> nutritionInfo) {
-        this.description = description;
-        this.ingredients = ingredients;
-        this.methodSteps = methodSteps;
-        this.nutritionInfo = nutritionInfo;
+        this.nutrition = new ArrayList<>();
     }
 
     public Long getId() {
@@ -68,17 +68,17 @@ public class Recipe {
         this.methodSteps = methodSteps;
     }
 
-    public List<Nutrition> getNutritionInfo() {
-        return nutritionInfo;
+    public List<Nutrition> getNutrition() {
+        return nutrition;
     }
 
-    public void setNutritionInfo(List<Nutrition> nutritionInfo) {
-        this.nutritionInfo = nutritionInfo;
+    public void setNutrition(List<Nutrition> nutrition) {
+        this.nutrition = nutrition;
     }
 
     public boolean hasNutrition(Nutrition nutrition) {
 
-        return getNutritionInfo().contains(nutrition);
+        return getNutrition().contains(nutrition);
     }
 
 }

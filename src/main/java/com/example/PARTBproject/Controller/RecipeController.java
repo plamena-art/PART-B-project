@@ -17,11 +17,18 @@ public class RecipeController {
 
     @Autowired
     NutritionRepository nutritionRepository;
-    private Object nutritionInfo;
+    private Object nutrition;
+
+    @GetMapping("/")
+    public String route(Model model) {
+        model.addAttribute("recipes", recipeRepository.findAll());
+        return "recipes";
+    }
 
     @GetMapping("/create-recipe")
-    public String createRecipe(Model model) {
-        model.addAttribute("recipe", new Recipe());
+    public String createRecipe(Recipe recipe) {
+        recipeRepository.save(recipe);
+        //model.addAttribute("recipe", new Recipe());
         return "CreateRecipe";
     }
 
@@ -30,42 +37,44 @@ public class RecipeController {
         Recipe recipe = recipeRepository.findById(id).orElse(new Recipe());
 
         model.addAttribute("recipe", recipe);
-        model.addAttribute("nutritionInfo", recipe.getNutritionInfo());
+        model.addAttribute("nutrition");
         return "recipe";
     }
 
     @GetMapping("/recipes")
     public String recipesList(Model model) {
         model.addAttribute("recipes", recipeRepository.findAll());
-        return "recipeList";
+        return "recipe";
     }
 
     @PostMapping("/recipes")
-    public String recipesAdd(@RequestParam String methodSteps, @RequestParam String description, @RequestParam String ingredients, Model model) {
+    public String recipesAdd(@RequestParam String methodSteps, @RequestParam String description, @RequestParam String ingredients,@RequestParam String total, Model model) {
         Recipe newRecipe = new Recipe();
         newRecipe.setMethodSteps(methodSteps);
         newRecipe.setDescription(description);
         newRecipe.setIngredients(ingredients);
+        newRecipe.setTotal(total);
         recipeRepository.save(newRecipe);
 
 
-        model.addAttribute("recipe", newRecipe);
-        model.addAttribute("recipes", nutritionRepository.findAll());
-        return "redirect:/recipe/" + newRecipe.getId();
+        //model.addAttribute("recipe", newRecipe);
+        //model.addAttribute("recipes", nutritionRepository.findAll());
+        //return "redirect:/recipes/" + newRecipe.getId();
+        return "redirect:/";
     }
 
-    @RequestMapping(value = "/recipe/{id}/nutritionInfo", method = RequestMethod.POST)
-    public String recipesAddNutritiouns(@PathVariable Long id, @RequestParam Long nutritiousId, Model model) {
-        Nutrition nutrition = nutritionRepository.findById(nutritiousId).orElse(new Nutrition());
+    @RequestMapping(value = "/recipe/{id}/nutrition", method = RequestMethod.POST)
+    public String recipesAddNutrition(@PathVariable Long id, @RequestParam Long nutritionId, Model model) {
+        Nutrition nutrition = nutritionRepository.findById(nutritionId).orElse(new Nutrition());
         Recipe recipe = recipeRepository.findById(id).orElse(new Recipe());
 
         if (recipe != null) {
             if (!recipe.hasNutrition(nutrition)) {
-                recipe.getNutritionInfo().add(nutrition);
+                recipe.getNutrition().add(nutrition);
             }
             recipeRepository.save(recipe);
             model.addAttribute("recipe", recipe);
-            Model nutritionInfo = model.addAttribute("nutritionInfo", recipe.getNutritionInfo());
+            Model Nutrition = model.addAttribute("nutrition", recipe.getNutrition());
             return "redirect:/recipe" + recipe.getId();
         }
 
