@@ -6,9 +6,13 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 
-@Service
+
 public interface RecipeService {
 
-    List<Recipe> getAllRecipes();
+    public Recipe save(Recipe recipe);
+
+    public Recipe getById(Long id);
+
+    public List<Recipe> getAllRecipes();
 
 }
