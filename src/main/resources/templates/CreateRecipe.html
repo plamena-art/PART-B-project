@@ -9,7 +9,7 @@
   <!-- Bootstrap CSS -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
-  <link rel="stylesheet" href="/css/dashboard.css" />
+
 </head>
 <body>
 
@@ -25,28 +25,32 @@
         <div class="form-group row">
           <label class="col-sm-2 col-form-label">description</label>
           <div class="col-sm-6">
-            <input type="text" th:field="*{description}" placeholder="Description">
+            <input type="text" th:field="*{description}" placeholder="Description" style="
+    width: 165%;">
           </div>
         </div>
 
         <div class="form-group row">
           <label class="col-sm-2 col-form-label">total</label>
           <div class="col-sm-6">
-            <input type="text" th:field="*{total}" placeholder="Total" >
+            <input type="text" th:field="*{total}" placeholder="Total" style="
+    width: 165%;">
           </div>
         </div>
 
         <div class="form-group row">
           <label class="col-sm-2 col-form-label">Ingredients</label>
           <div class="col-sm-6">
-            <input type="text" th:field="*{ingredients}" placeholder="Ingredients" >
+            <input type="text" th:field="*{ingredients}" placeholder="Ingredients" style="
+    width: 165%;">
           </div>
         </div>
 
         <div class="form-group row">
           <label class="col-sm-2 col-form-label">Method Steps</label>
           <div class="col-sm-6">
-            <input type="text" th:field="*{methodSteps}" placeholder="Method Steps">
+            <input type="text" th:field="*{methodSteps}" placeholder="Method Steps" style="
+    width: 165%;">
           </div>
         </div>
 
@@ -58,6 +62,9 @@
           </div>
         </div>
 
+        <div class="recipe-footer-right">
+          <a th:href="@{/}">Go to Home Page</a>
+        </div>
 
 
 
