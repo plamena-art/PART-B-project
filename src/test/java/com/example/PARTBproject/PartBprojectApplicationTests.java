@@ -10,14 +10,14 @@ import org.springframework.ui.Model;
 @SpringBootTest
 class PartBprojectApplicationTests {
 
-
 	@Autowired
 	private RecipeController recipeController;
 
-	@Test
-	public void recipe() {
-//		 = new Recipe();
-//		recipeController.recipesAdd(Model model);
-	}
+//	@Test
+//	public void recipe() {
+//	 = new Recipe();
+//	recipeController.recipesAdd(Model model);
+//	}
+
 
 }
