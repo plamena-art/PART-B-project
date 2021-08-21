@@ -27,9 +27,9 @@ public class RecipeController {
     }
 
     @GetMapping("/create-recipe")
-    public String createRecipe(Recipe recipe) {
-        recipeService.save(recipe);
-        //model.addAttribute("recipe", new Recipe());
+    public String createRecipe(Model model) {
+        //recipeService.save(recipe);
+        model.addAttribute("recipe", new Recipe());
         return "CreateRecipe";
     }
 
