@@ -244,6 +244,80 @@ height: 100%;
 
 }
 
+.text-header{
+    text-align: center;
+      margin-top: 5%;
+       position: absolute;
+       margin-left: 38%;
+       font-size: 60%;
+}
 
+#box {
+  height: 20%;
+  width: 300%;
+
+}
+
+#step1 {
+
+  font-size: 16px;
+    font-weight: italics;
+
+  line-height: 55px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #17a2b8;
+
+}
+
+#step2 {
+
+  font-size: 18px;
+    font-weight: italics;
+
+  line-height: 65px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: #17a2b8;
+
+}
+
+#step3 {
+  width: 24%;
+  font-size: 18px;
+    font-weight: italics;
+  margin-left:55px;
+  line-height: 65px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: grey;
+
+}
+
+#step4 {
+  width: 24%;
+  font-size: 18px;
+    font-weight: italics;
+  margin-left:55px;
+  line-height: 65px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color: grey;
+
+}
+
+#background-recipe {
+
+    background: url('/images/sugar-free soufle.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
+
+.recipe-footer-right{
+    text-align: right;
+}
+
+.recipe-footer-left{
+    text-align: left;
+}
 
 

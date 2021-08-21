@@ -83,4 +83,27 @@ public class RecipeController {
         return "redirect:/recipes";
 
     }
+
+    @GetMapping("/showEdit/")
+    public String showEditRecipe(@RequestParam("id") Long id, Model model) {
+        Recipe recipe = recipeService.getById(id);
+        model.addAttribute("recipe", recipe);
+        return "editRecipe";
+    }
+
+    @PostMapping("/update")
+    public String recipesUpdate(@ModelAttribute("recipe") Recipe recipeData, Model model) {
+        /*Recipe newRecipe = new Recipe();
+        newRecipe.setMethodSteps(recipeData.getMethodSteps());
+        newRecipe.setDescription(recipeData.getDescription());
+        newRecipe.setIngredients(recipeData.getIngredients());
+        newRecipe.setTotal(recipeData.getTotal());*/
+        recipeService.save(recipeData);
+
+
+        //model.addAttribute("recipe", newRecipe);
+        //model.addAttribute("recipes", nutritionRepository.findAll());
+        //return "redirect:/recipes/" + newRecipe.getId();
+        return "redirect:/";
+    }
 }

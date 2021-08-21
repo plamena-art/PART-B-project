@@ -13,9 +13,12 @@
 </head>
 <body id="background">
 
+<div class="text-header">
+  <h2>Welcome to my dessert page!</h2>
+</div>
 <div class="container py-4 middleOfPage" >
   <div class="card bg-light">
-    <div class="card-header">Low Carb Desserts</div>
+    <div class="card-header text-center">Low Carb Desserts</div>
     <div class="card-body">
 
       <table class="table table-striped table-bordered">
@@ -42,6 +45,10 @@
         </tr>
         </tbody>
       </table>
+    </div>
+
+    <div class="form-footer">
+      <a th:href="@{/create-recipe}">Create a new recipe</a>
     </div>
   </div>
 </div>

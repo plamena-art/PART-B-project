@@ -1,4 +1,4 @@
-package com.example.PARTBproject.Controller;
+package com.example.PARTBproject.Services;
 
 import com.example.PARTBproject.Entity.Recipe;
 import com.example.PARTBproject.Repositories.RecipeRepository;
@@ -18,7 +18,7 @@ class RecipeServiceTest {
     @Autowired
     private RecipeService recipeService;
 
-//testing on recipe service new recipe
+    //testing on recipe service new recipe
     @Test
     void save() {
         Recipe newRecipe = new Recipe();
@@ -30,15 +30,15 @@ class RecipeServiceTest {
         assertNotNull(recipe);
     }
 
-//testing on get by id
+    //testing on get by id
     @Test
     void getById() {
         Long id = 1L;
-       Recipe recipe = recipeService.getById(id);
-       assertNotNull(recipe);
+        Recipe recipe = recipeService.getById(id);
+        assertNotNull(recipe);
     }
 
-//testing on get all recipes
+    //testing on get all recipes
     @Test
     void getAllRecipes() {
 

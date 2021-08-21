@@ -1,21 +1,92 @@
 <!DOCTYPE HTML>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- Bootstrap CSS for styling and layout-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="/css/dashboard.css" />
   <title>Recipe</title>
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
   <style>
 
   </style>
 </head>
-<body>
-<h1>Recipe</h1><br />
+<body id="background-recipe">
+
+<div class="container py-4 middleOfPage" >
+    <div class="card bg-light">
+        <div class="card-header text-center">Low Carb Desserts</div>
+        <div class="card-body">
+
+            <div id="step1">
+                <b>Description:</b> <span th:text="${recipe.description}"></span>
+            </div>
+
+            <div id="step1">
+                <b>Ingredients:</b> <span th:text="${recipe.ingredients}"></span>
+            </div>
+
+            <div id="step1">
+                <b>Instructions:</b> <span th:text="${recipe.methodSteps}"></span>
+            </div>
+
+            <div id="step1">
+               <b>Nutrition:</b>  <span th:each="nutrition : ${recipe.nutrition}"> -
+    <span th:text="${nutrition.total}"></span>  </span>
+            </div>
+
+
+
+
+
+            <br />
+
+            <div class="recipe-footer-left">
+                <a th:href="@{/}">Go to Home Page</a>
+            </div>
+
+
+            <div class="recipe-footer-right">
+                <a th:href="@{/showEdit/(id=${recipe.id})}">Edit</a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+<!--
+<div id="box">
+
+
+
+    <div id="step1">
+        Description: <b th:text="${recipe.description}"></b>
+    </div>
+
+    <div id="step2">
+        Ingredients: <b th:text="${recipe.ingredients}"></b>
+    </div>
+
+    <div id="step3">
+        Instructions: <span th:text="${recipe.methodSteps}"></span>
+    </div>
+
+    <div id="step4">
+        Nutrition: <span th:each="nutrition : ${recipe.nutrition}"></span>
+    </div>
+
+
+
+</div>
+-->
+
+<!--<h1>Recipe</h1><br />
 Description: <b th:text="${recipe.description}"></b> <br /><b th:text="${recipe.ingredients}"></b>
 Instructions: <span th:text="${recipe.methodSteps}"></span><br><br />
 Nutrition: <span th:each="nutrition : ${recipe.nutrition}"><br />
     <br>&nbsp;&nbsp;<span th:text="${nutrition.total}"></span> - </span>
 
 <br />
-<a th:href="@{/}">Go to Home Page</a>
+<a th:href="@{/}">Go to Home Page</a>-->
 </body>
 </html>
