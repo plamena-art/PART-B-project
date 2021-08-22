@@ -1,7 +1,8 @@
 PART B - MICROSERVICES(MS)
 CR12. REQUIREMENT AND PLANNING DOCUMENT.
 
-[Planning img.pdf](https://github.com/plamena-art/PART-B-project/files/7027234/Planning.img.pdf)
+![Planning img-1](https://user-images.githubusercontent.com/81399590/130353291-72a0df6d-9627-4393-a1e5-df892655e245.jpg)
+
 
 CR13. STATEMENT OF PURPOSE. (WHAT THE SERVICE WILL DO, BUSINESS PROBLEM, TARGET AUDIENCE.
 CR14. LIST OF FEATURES INCLUDED IN THE MS.
