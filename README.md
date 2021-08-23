@@ -1,11 +1,11 @@
 #**PART B - MICROSERVICES(MS)**
 
-###*CR12. REQUIREMENT AND PLANNING DOCUMENT.*
+### *CR12. REQUIREMENT AND PLANNING DOCUMENT.*
 
 ![Planning img-1](https://user-images.githubusercontent.com/81399590/130353291-72a0df6d-9627-4393-a1e5-df892655e245.jpg)
 
 
-###*CR13. STATEMENT OF PURPOSE. (WHAT THE SERVICE WILL DO, BUSINESS PROBLEM, TARGET AUDIENCE.*
+### *CR13. STATEMENT OF PURPOSE. (WHAT THE SERVICE WILL DO, BUSINESS PROBLEM, TARGET AUDIENCE.*
 
 _**WHAT THE SERVICE WILL DO:**_
 My Part B project in microservice will work as a Low Carbohydrate dessert recipes web application where the user will be able to store their delicious recipes with visible nutrition info (kilocalories) on the first page, also ingredients, instructions on how desserts to be prepared and lastly but not least nutrition information. With this information, the user can keep track of their macros during the day or the week. Also, the user will be able to create a new recipe, or just Edit their recipes when they wish to.
@@ -15,15 +15,15 @@ _**BUSINESS PROBLEM:**_ Many people who are loving sweets but trying to avoid su
 _**TARGET AUDIENCE:**_
 The target audience for this web application includes people of any type of gender, age or nationality. For those who enjoy cooking, preparing food and eating healthy sweet desserts or any other food.
 
-###*CR14. LIST OF FEATURES INCLUDED IN THE MS.*
-####1. Displays the “Welcome/Hello to my dessert page” message to the user.
-####2. Displays a table named “Low Carb Desserts” with Recipe’s name, nutrition info such as kilocalories.
-####3. Plus Go-To Recipe’s view takes the user to a new page where he can see all ingredients and instructions for the recipe. From there the user can edit the recipe if he likes or go back to the Home page where if he wishes he can add( create ) a new recipe or just pick up one from the table(list) with low crab dessert recipes.
-####4. If the user decides to create a new recipe, the data will be automatically stored to the submitted data within the H2 database.
-####5. When the user decides to edit a recipe, once he clicks on “Edit” a new page will be opened with all information about the current recipe. After changes are made the user could press an “Update recipe” button to update the recipe or if the user decides not to make any changes, he could simply use the “Go to Home Page” link and go back to the main web page.
+### *CR14. LIST OF FEATURES INCLUDED IN THE MS.*
+#### 1. Displays the “Welcome/Hello to my dessert page” message to the user.
+#### 2. Displays a table named “Low Carb Desserts” with Recipe’s name, nutrition info such as kilocalories.
+#### 3. Plus Go-To Recipe’s view takes the user to a new page where he can see all ingredients and instructions for the recipe. From there the user can edit the recipe if he likes or go back to the Home page where if he wishes he can add( create ) a new recipe or just pick up one from the table(list) with low crab dessert recipes.
+#### 4. If the user decides to create a new recipe, the data will be automatically stored to the submitted data within the H2 database.
+#### 5. When the user decides to edit a recipe, once he clicks on “Edit” a new page will be opened with all information about the current recipe. After changes are made the user could press an “Update recipe” button to update the recipe or if the user decides not to make any changes, he could simply use the “Go to Home Page” link and go back to the main web page.
 
 
-###*CR15. DEVELOP AN IMPLEMENTATION PLAN WHICH DETAILS THE STEPS AND TASKS REQUIRED TO IMPLEMENT YOUR MS.*
+### *CR15. DEVELOP AN IMPLEMENTATION PLAN WHICH DETAILS THE STEPS AND TASKS REQUIRED TO IMPLEMENT YOUR MS.*
 1. Firstly, I started my Microservice PART B project by creating a GitHub repository named “PARTBproject”
 2. Secondly, I created a Maven Spring Boot project using Spring Initializer with the following dependencies:
 -[x] _Spring web._
@@ -62,19 +62,19 @@ The target audience for this web application includes people of any type of gend
 23.    Then started working on the documentation part by creating a Readme markdown file, added some photos with charts to my markdown file.
 24.    Then by using GitBash I pushed my repository in GitHub and created a zip file ready for submission.
 
-###*CR16. CODE(IMPLEMENT) ALL THE FEATURES OF YOUR MS USING A VARIETY OF JAVA AND SPRING PROGRAMMING CONCEPTS.*
-###*CR17. CREATE A MS WHICH RUNS WITHOUT ERROR AND HAS THE FEATURES CONSISTENT WITH THE PLANNING DOCUMENT.*
-###*CR18. USE SOURCE CONTROL - 15 COMMITS MINIMUM.*
-###*CR19. USE INDUSTRY-STANDARD STYLE AND NAMING CONVENTIONS FOR YOUR JAVA CODE. ( APPLIES INDUSTRY-STANDARD STYLE AND NAMING CONVENTIONS CONSISTENTLY TO ALL CODE WITH NO OMISSIONS.*
-###*CR20. APPLY THE DRY (DO NOT REPLAY YOURSELF) TO ALL YOUR CODE.*
+### *CR16. CODE(IMPLEMENT) ALL THE FEATURES OF YOUR MS USING A VARIETY OF JAVA AND SPRING PROGRAMMING CONCEPTS.*
+### *CR17. CREATE A MS WHICH RUNS WITHOUT ERROR AND HAS THE FEATURES CONSISTENT WITH THE PLANNING DOCUMENT.*
+### *CR18. USE SOURCE CONTROL - 15 COMMITS MINIMUM.*
+### *CR19. USE INDUSTRY-STANDARD STYLE AND NAMING CONVENTIONS FOR YOUR JAVA CODE. ( APPLIES INDUSTRY-STANDARD STYLE AND NAMING CONVENTIONS CONSISTENTLY TO ALL CODE WITH NO OMISSIONS.*
+### *CR20. APPLY THE DRY (DO NOT REPLAY YOURSELF) TO ALL YOUR CODE.*
 
-###*CR21. DESIGN, DOCUMENT AND RUN SIMPLE TESTS ON YOUR MS.*
+### *CR21. DESIGN, DOCUMENT AND RUN SIMPLE TESTS ON YOUR MS.*
 ###I have created *3 tests* on my *Service* class as following:
 1. Junit test on save recipe
 2. Junit test on get by id
 3. Junit test on get all recipes
 >Mentioned on my Implementation point CR15 as well.
-###*CR22. PRESENT YOUR MS TO AN AUDIENCE. PROVIDE A WALKTHROUGH OF:*
+### *CR22. PRESENT YOUR MS TO AN AUDIENCE. PROVIDE A WALKTHROUGH OF:*
         1. PURPOSE OF MS,
         2. FUNCTIONALITY AND FEATURES OF MS.
         3. DESIGN OF MS.
