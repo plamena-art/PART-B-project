@@ -24,6 +24,10 @@ The target audience for this web application includes people in any type of gend
 
 
 ###*CR15. DEVELOP AN IMPLEMENTATION PLAN WHICH DETAILS THE STEPS AND TASKS REQUIRED TO IMPLEMENT YOUR MS.*
+
+![Implementation](https://user-images.githubusercontent.com/81399590/130398287-91457808-4d99-4193-85e1-a46fd6b687a3.jpg)
+
+
 1.	Firstly, I started my Microservice PART B project by creating a GitHub repository named “PARTBproject”
 2.	Secondly, I created a Maven Spring Boot project using Spring Initializer with the following dependencies: 
 -[x] _Spring web._-[x] _H2 database._
