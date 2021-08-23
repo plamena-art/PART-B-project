@@ -258,13 +258,11 @@ height: 100%;
 
 }
 
-#step1 {
+.step1 {
 
   font-size: 16px;
-    font-weight: italics;
 
-  line-height: 55px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: sans-serif;
     color: #17a2b8;
 
 }
@@ -304,7 +302,7 @@ height: 100%;
 
 #background-recipe {
 
-    background: url('/images/ice-cream.jpg') no-repeat center center fixed;
+    background: url('/images/slides photo 4.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;

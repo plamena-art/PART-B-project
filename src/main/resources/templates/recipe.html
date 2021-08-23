@@ -18,22 +18,27 @@
         <div class="card-header text-center">Low Carb Desserts</div>
         <div class="card-body">
 
-            <div id="step1">
+            <div class="step1">
                 <b>Description:</b> <span th:text="${recipe.description}"></span>
             </div>
 
-            <div id="step1">
+            <div class="step1">
                 <b>Ingredients:</b> <span th:text="${recipe.ingredients}"></span>
             </div>
 
-            <div id="step1">
+            <div class="step1">
                 <b>Instructions:</b> <span th:text="${recipe.methodSteps}"></span>
             </div>
 
-            <div id="step1">
+            <div class="step1">
+                <b>Nutrition:</b> <span th:text="${recipe.total}"></span>
+            </div>
+
+
+            <!--<div id="step1">
                <b>Nutrition:</b>  <span th:each="nutrition : ${recipe.nutrition}"> -
     <span th:text="${nutrition.total}"></span>  </span>
-            </div>
+            </div>-->
 
 
 

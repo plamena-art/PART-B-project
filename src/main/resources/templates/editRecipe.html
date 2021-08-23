@@ -14,12 +14,13 @@
 
     #background-update-recipe {
 
-    background: url('/images/ice-cream.jpg') no-repeat center center fixed;
+    background: url('/images/slides photo 4.jpg') no-repeat center center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     background-size: cover;
     -o-background-size: cover;
 }
+
   </style>
 </head>
 <body id="background-update-recipe">
@@ -29,8 +30,9 @@
 
 <div class="container py-4 middleOfPage" >
   <div class="card bg-dark text-white">
-    <div class="card-header text-center"Recipes Home Page</div>
-  <div class="card-body">
+    <div class="card-header text-center"Recipes Home Page></div>
+  <div class="card-body"></div>
+
     <form action="#" th:action="@{/update}" th:object="${recipe}" method="POST">
       <input type="hidden" th:field="*{id}" readonly="readonly" />
 
